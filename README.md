@@ -6,17 +6,18 @@ Page Object pattern provides its host advantages like script maintainability, sc
 
 **Features:**
 
-•	Generates code for Page Objects
-•	Generates a method which is used to fill the form for a given page
-•	Generates code for a method which captures error messages from a page
-•	Generates a method which tests Field level validations of  a given page(using Data Provider)
-•	Generates the Data Provider  for the Field level Validation method 
+* Generates code for Page Objects
+* Generates a method which is used to fill the form for a given page
+* Generates code for a method which captures error messages from a page
+* Generates a method which tests Field level validations of  a given page(using Data Provider)
+* Generates the Data Provider  for the Field level Validation method 
 
 **Usage:**
 
 *Step 1*:
-•	Make sure you have java environment with ant configured on your machine.
-•	Ant configuration details are available from http://ant.apache.org/manual/install.html
+
+* Make sure you have java environment with ant configured on your machine.
+* Ant configuration details are available from http://ant.apache.org/manual/install.html
 
 *Step 2*: Download the Project
 
@@ -27,11 +28,12 @@ According to your requirement, you can delete some/few method(s)  from config.pr
 ![ScreenShot](images/configstep1.jpg)
 
 *Step 4*:
-Go to class Input.java which is located in input package and do the following:
-•	Change name of the page for which you want to generate code
-•	Remove existing locators and paste the locators for which the Page Object methods  need to be generated
+ Go to class Input.java which is located in input package and do the following:
 
-![ScreenShot](images/configstep2.jpg)
+* Change name of the page for which you want to generate code
+* Remove existing locators and paste the locators for which the Page Object methods  need to be generated
+
+![ScreenShot](images/inputstep2.jpg)
 
 
 Your locators need to adhere following standards:
@@ -50,7 +52,7 @@ Your locators need to adhere following standards:
 *Step 6*: Run ant command. 
 This will generate the code and the test data template/sheet in csv format
 
-![ScreenShot](images/filestep3.jpg)
+![ScreenShot](images/filesstep3.jpg)
 
 ➢	Code will be generated in the following two files
 
@@ -58,11 +60,11 @@ This will generate the code and the test data template/sheet in csv format
 This contains code for page object methods 
 2. ***SeleniumCodeGenerator\generatedCode\code_fillform.txt***:  
 This contains the code for following four methods:
-•	**getData method**: acts as a dataprovider for test method field level validations. Paste this code in your test class
-•	**fillform_pagename method** : method used to fill the provided page.
+ * **getData method**: acts as a dataprovider for test method field level validations. Paste this code in your test class
+ * **fillform_pagename method** : method used to fill the provided page.
 Paste this method in your page object class as shown below
-•	**capture_Errors method**: method used to capture errors from page after filling the form. Paste this method in your page object class as shown below
-•	**fieldValidations_pagename**: method to test field validations of the page. 
+ * **capture_Errors method**: method used to capture errors from page after filling the form. Paste this method in your page object class as shown below
+ * **fieldValidations_pagename**: method to test field validations of the page. 
 Paste this code in your test class as shown below
 
 
@@ -74,8 +76,9 @@ Paste this code in your test class as shown below
 ![ScreenShot](images/csvstep5.jpg)
 
 **Contributors**
-•	Omkar Kesa
-•	Tarun Narula
+
+* Omkar Kesa
+* Tarun Narula
 
 **Contact Us**
 Get in touch with us with your suggestions, thoughts and queries at engineering@naukri.com
