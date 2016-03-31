@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="run">
+	<basename property="ant.project.name" file="${basedir}" />
+
+	<property name="classes.dir" value="build" />
+	<property name="report.dir" value="test-output" />
+	<property name="debuglevel" value="source,lines,vars" />
+	<property name="target" value="1.7" />
+	<property name="source" value="1.7" />
+	<path id="Naukri.classpath">
+		<pathelement location="build" />
+	</path>
+
+	<path id="classes">
+		<pathelement location="build" />
+	</path>
+
+	<target name="run">
+		<antcall target="init" />
+		<antcall target="build-project" />
+		<antcall target="runTests" />
+	</target>
+
+	<target name="init">
+		<delete dir="${classes.dir}" />
+		<mkdir dir="${classes.dir}" />
+		<copy includeemptydirs="false" todir="${classes.dir}">
+			<fileset dir="src">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+
+
+	</target>
+
+
+	<target name="build-project">
+		<echo message="${ant.project.name}: ${ant.file}" />
+		<javac debug="true" debuglevel="${debuglevel}" destdir="${classes.dir}"
+			includeantruntime="false" source="${source}" target="${target}"
+			srcdir="src">
+			<src path="src" />
+			<classpath refid="Naukri.classpath" />
+		</javac>
+	</target>
+
+	<target name="runTests">
+
+		<java classname="input.Input" failonerror="true" fork="yes">
+
+			<classpath refid="Naukri.classpath" />
+		</java>
+
+	</target>
+
+
+</project>
